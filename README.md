@@ -72,6 +72,22 @@ tkwebview的核心类，本质上是一个Frame，可以和Frame布局。
 
 返回`webview/webview`的版本。
 
+#### tkwebview.reload()
+
+重新加载。
+
+#### tkwebview.go_back()
+
+向后一页。
+
+#### tkwebview.go_forward()
+
+向前一页。
+
+#### tkwebview.stop()
+
+停止加载。
+
 > [!CAUTION]
 >
 > Windows平台下，不知原因，tkinter界面中，WebView2具有最高级渲染优先级，一旦获得焦点，除非立刻整个窗口，否则其它控件无法获取焦点。解决方法是为所有控件绑定`<Button-1>`使用`event.widget.focus_force()`强制获取焦点。如果有控件还需要额外绑定`<Button-1>`事件，使用`add`参数。

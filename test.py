@@ -78,4 +78,9 @@ web.bindjs('compute', compute, is_async_return=True)
 a.bind_all("<Button-1>", lambda e: e.widget.focus_force())
 # 如果某个控件同样需要<Button-1>，可自行改写或者使用add参数添加
 
+a.bind("<Alt-Left>", lambda e: web.go_back())
+a.bind("<Alt-Right>", lambda e: web.go_forward())
+a.bind("<F5>", lambda e: web.reload())
+a.bind("<Escape>", lambda e: web.stop())
+
 a.mainloop()

@@ -40,3 +40,15 @@ class TkWebview(Frame):
     
     def version(self):
         return self.webview.version()
+
+    def reload(self):
+        return self.webview.reload()
+    
+    def go_back(self):
+        return self.webview.go_back()
+    
+    def go_forward(self):
+        return self.webview.go_forward()
+    
+    def stop(self):
+        return self.webview.stop()

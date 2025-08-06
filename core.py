@@ -145,6 +145,18 @@ def declare_library_path(librarypath=None, exception=True):
         webview_resize = _webview.webview_resize
         webview_resize.argtypes = (webview_t,)
         webview_resize.restype = webview_error_t
+        webview_reload = _webview.webview_reload
+        webview_reload.argtypes = (webview_t,)
+        webview_reload.restype = webview_error_t
+        webview_goback = _webview.webview_goback
+        webview_goback.argtypes = (webview_t,)
+        webview_goback.restype = webview_error_t
+        webview_goforward = _webview.webview_goforward
+        webview_goforward.argtypes = (webview_t,)
+        webview_goforward.restype = webview_error_t
+        webview_stop = _webview.webview_stop
+        webview_stop.argtypes = (webview_t,)
+        webview_stop.restype = webview_error_t
         webview_set_html = _webview.webview_set_html
         webview_set_html.argtypes = webview_t, c_char_p
         webview_set_html.restype = webview_error_t
@@ -307,6 +319,18 @@ class Webview:
     
     def resize(self):
         return webview_resize(self.pwebview)
+
+    def reload(self):
+        return webview_reload(self.pwebview)
+
+    def go_back(self):
+        return webview_goback(self.pwebview)
+
+    def go_forward(self):
+        return webview_goforward(self.pwebview)
+
+    def stop(self):
+        return webview_stop(self.pwebview)
 
     def set_title(self, title):
         return webview_set_title(self.pwebview, title.encode("utf8"))
