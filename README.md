@@ -14,7 +14,7 @@ tkinter的webview视图。
 
 > [!WARNING]
 >
-> 虽然webview是跨平台的，但是原始的`set_size`无法满足嵌入状态下的尺寸修改，需要实现新的函数，并且为了方便，我单独维护了一个基于webview的c++库，这个库的核心部件截止于[HIllya51/webviewpy@e81bd17](https://github.com/HIllya51/webviewpy/commit/e81bd17023623345f3ae801dcf4afde033b16fe0)，如果没有严重错误，不会更新。
+> 虽然webview是跨平台的，但是原始的`set_size`无法满足嵌入状态下的尺寸修改，需要实现新的函数，并且为了方便，我单独维护了一个基于webview的c++库[Smart-Space/webview](https://github.com/Smart-Space/webview)，这个库的核心部件截止于[HIllya51/webviewpy@e81bd17](https://github.com/HIllya51/webviewpy/commit/e81bd17023623345f3ae801dcf4afde033b16fe0)，如果没有严重错误，不会更新。
 >
 > 由于条件限制，本仓库只能提供的Windows平台的二进制链接库（32位链接库未经过测试）。
 
