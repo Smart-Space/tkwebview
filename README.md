@@ -74,17 +74,22 @@ tkwebview的核心类，本质上是一个Frame，可以和Frame布局。
 
 #### tkwebview.reload()
 
+**Windows Only**
+
 重新加载。
 
 #### tkwebview.go_back()
+**Windows Only**
 
 向后一页。
 
 #### tkwebview.go_forward()
+**Windows Only**
 
 向前一页。
 
 #### tkwebview.stop()
+**Windows Only**
 
 停止加载。
 
