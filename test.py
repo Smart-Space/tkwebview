@@ -68,9 +68,16 @@ html="""
 
 count_num = 0
 
-web=Webview(a)
-web.pack(fill='both', expand=True)
-# web.navigate('https://www.baidu.com/')
+test_mode = 1
+
+if test_mode == 0:
+    web=Webview(master=a)
+    web.pack(fill='both', expand=True)
+else:
+    web=Webview()
+    web.set_size(800, 400)
+    web.set_title("TkWebview Test")
+
 web.set_html(html)
 web.bindjs('count', count)
 web.bindjs('compute', compute, is_async_return=True)

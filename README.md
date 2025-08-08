@@ -32,6 +32,8 @@ pip install tkwebview
 
 tkwebview的核心类，本质上是一个Frame，可以和Frame布局。
 
+如果`master`为`None`，将独立打开一个webview窗口，使用类似`webviewpy`，但如果要独立运行，需要使用`tkwebview.webview.run()`开启UI循环。
+
 #### tkwebview.bindjs(name, fn, is_async_return=False)
 
 绑定名为`name`的JS函数，指向`fn`。在JavaScript中，使用`window.name`调用。
@@ -93,9 +95,52 @@ tkwebview的核心类，本质上是一个Frame，可以和Frame布局。
 
 停止加载。
 
+#### tkwebview.set_title(title)
+
+**独立模式**
+
+设置窗口标题。
+
+#### tkwebview.destroy_webview()
+
+**独立模式**
+
+关闭webview窗口。
+
+**控件模式**
+
+销毁本控件
+
+#### tkwebview.get_window()
+
+**独立模式**
+
+返回窗口ID。
+
+- Windows：HWND
+- Linux：GtkWindow指针
+- Cocoa：NSWindow指针
+
+**控件模式**
+
+返回上层组件ID。
+
+- Windows：HWND
+- Linux：X11窗口标识
+
+#### tkwebview.set_size(width, height)
+
+**独立模式**
+
+设置窗口大小。
+
+**控件模式**
+
+尝试修改控件大小。
+
 > [!CAUTION]
 >
-> Windows平台下，不知原因，tkinter界面中，WebView2具有最高级渲染优先级，一旦获得焦点，除非立刻整个窗口，否则其它控件无法获取焦点。解决方法是为所有控件绑定`<Button-1>`使用`event.widget.focus_force()`强制获取焦点。如果有控件还需要额外绑定`<Button-1>`事件，使用`add`参数。
+> Windows平台下，不知原因，tkinter界面中，WebView2具有最高级渲染优先级，一旦获得焦点，除非离开整个窗口，否则其它控件无法获取焦点。解决方法是为所有控件绑定`<Button-1>`使用`event.widget.focus_force()`强制获取焦点。如果有控件还需要额外绑定`<Button-1>`事件，使用`add`参数。
 
 ## 开发
 
@@ -111,4 +156,4 @@ tkwebview的核心类，本质上是一个Frame，可以和Frame布局。
 
 ## 关于跨平台
 
-理论上，`tkwebview`完全能够跨平台，但是我测试不了，所以只提供Windows平台的二进制链接库。所有的跨平台代码只需要在`webview`中编写，本库只提供统一封装。
+理论上，`tkwebview`完全能够跨平台，但是我测试不了，所以只提供Windows平台的二进制链接库。所有的跨平台代码应当在`webview`中编写，本库只提供统一封装。
